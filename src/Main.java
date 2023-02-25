@@ -34,10 +34,17 @@ public class Main {
     private static void task4() {
         System.out.println("Task 4:");
 
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
 
-        for (int i = reverseFullName.length-1; i >= 0 ; i--) {
-            System.out.print(reverseFullName[i]);
+        for (int i = 0; i < reverseFullName.length/2; i++) {
+            char buff = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[reverseFullName.length - i - 1];
+            reverseFullName[reverseFullName.length - i - 1] = buff;
+        }
+
+        for (char ch :
+                reverseFullName) {
+            System.out.print(ch);
         }
 
         System.out.println("\n");
